@@ -1,0 +1,23 @@
+{
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@ionic/vue": "^6.1.4",
+    "@ionic/vue-router": "^6.1.4",
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@vitejs/plugin-vue": "^2.3.2",
+    "@vue/compiler-sfc": "3.2.33",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.8",
+    "vue-tsc": "^0.34.11"
+  }
+}
