@@ -1,8 +1,7 @@
 # Getting Started with ViteJS, Ionic Framework v6 And VueJS
 
-<center style="display:flex">
-  <div><img src="assets/ios.png" style="max-height:500px"></div>
-  <div><img src="assets/android.png" style="max-height:500px"></div>
+<center>
+<img src="assets/cover.png" alt="android and ios emulator">
 </center>
 
 [ionic docs](https://ionicframework.com/docs/components)
