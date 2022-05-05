@@ -1,5 +1,4 @@
-# Getting Started with ViteJS, Ionic Framework v6 And VueJS
-
+# Getting Started with ViteJS, Ionic Framework v6, VueJS and Capacitor
 <center>
 <img src="assets/cover.png" alt="android and ios emulator">
 </center>
