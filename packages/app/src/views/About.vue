@@ -1,5 +1,5 @@
 <template>
-  <ion-page>
+  <ion-page ref="page">
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -10,17 +10,28 @@
     </ion-header>
     <ion-content class="ion-padding">
       <h1>About</h1>
-      <!-- MODAL CODE -->
-      <ion-modal :is-open="modalIsOpen" @didDismiss="closeModal()">
-        <about-modal @onClose="closeModal" />
+      <ion-modal
+        ref="modal"
+        trigger="open-modal"
+        :presenting-element="presentingElement"
+      >
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Modal</ion-title>
+            <ion-buttons slot="end">
+              <ion-button @click="dismiss()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding"> About Modal </ion-content>
       </ion-modal>
-      <ion-button @click="showModal">Open Modal</ion-button>
+      <ion-button id="open-modal" expand="block">Open</ion-button>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts" setup>
-import { defineComponent, ref } from 'vue'
+import { computed, onBeforeUnmount, ref } from 'vue'
 import {
   IonContent,
   IonButton,
@@ -32,16 +43,19 @@ import {
   IonToolbar,
   IonModal,
 } from '@ionic/vue'
-import AboutModal from '../components/AboutModal.vue'
 
-const modalIsOpen = ref(false)
-const showModal = () => {
-  modalIsOpen.value = true
+const page = ref<{ $el: HTMLElement } | null>(null)
+const modal = ref<{ $el: HTMLIonModalElement } | null>(null)
+
+const presentingElement = computed(() => page.value?.$el)
+
+function dismiss() {
+  modal.value?.$el.dismiss()
 }
 
-const closeModal = () => {
-  modalIsOpen.value = false
-}
+onBeforeUnmount(() => {
+  modal.value?.$el.dismiss()
+})
 </script>
 
 <style></style>
