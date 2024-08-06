@@ -17,6 +17,8 @@ pnpm install
 
 ## Development HMR
 
+Go to app folder `cd ./packages/app` and run the following command:
+
 ```bash
 # pwa
 pnpm dev
